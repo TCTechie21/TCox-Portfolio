@@ -1,0 +1,256 @@
+:root {
+  --bg-color: #0b0e14;
+  --card-bg: #161b22;
+  --aws-orange: #ff9900;
+  --orange-glow: 0 0 15px rgba(255, 153, 0, 0.6);
+  --accent-cyan: #00f2ff;
+  --cyan-glow: 0 0 15px rgba(0, 242, 255, 0.3);
+  --terminal-green: #2ecc71;
+  --border-color: #30363d;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #e6edf3;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    #1f242d 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background:
+    linear-gradient(rgba(35, 47, 62, 0.9), rgba(11, 14, 20, 1)),
+    url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  border: 1px solid var(--accent-cyan);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: var(--cyan-glow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--aws-orange);
+  object-fit: cover;
+  margin-bottom: 25px;
+  box-shadow: var(--orange-glow);
+}
+
+.name-container {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.name-link {
+  text-decoration: none;
+  display: block;
+}
+.main-name {
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.3s;
+}
+
+.reveal-text {
+  display: block;
+  font-family: monospace;
+  color: var(--terminal-green);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.name-link:hover .main-name {
+  color: var(--aws-orange);
+  text-shadow: var(--orange-glow);
+}
+.name-link:hover .reveal-text {
+  opacity: 1;
+  height: 20px;
+  text-shadow: 0 0 8px var(--terminal-green);
+}
+
+/* TYPEWRITER CURSOR */
+#typewriter::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.nav-links a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: white;
+  text-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--aws-orange);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  text-shadow: var(--orange-glow);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  clear: both;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-cyan);
+  box-shadow: var(--cyan-glow);
+  transition: 0.4s ease;
+  flex: 1;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+.grid-wrapper > section {
+  display: flex;
+  flex-direction: column;
+}
+
+.deployment-section {
+  margin-top: 60px;
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.timeline-item {
+  border-left: 2px solid #30363d;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.terminal-window {
+  background: #000;
+  border-radius: 6px;
+  padding: 15px;
+  font-family: monospace;
+  color: var(--terminal-green);
+  border: 1px solid #333;
+  margin: 15px 0;
+  word-wrap: break-word;
+}
+
+.badge-tag {
+  background: #1f242d;
+  color: var(--accent-cyan);
+  padding: 6px 12px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  display: inline-block;
+  margin: 5px;
+}
+
+.credential-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cert-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.cert-visual {
+  width: 50px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.aws-badge-small {
+  width: 45px;
+  height: 45px;
+  filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.4));
+}
+.cert-info strong {
+  display: block;
+  color: var(--accent-cyan);
+  margin-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  border-top: 1px solid var(--border-color);
+  padding: 30px 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
